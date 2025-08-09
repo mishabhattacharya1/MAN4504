@@ -21,18 +21,35 @@ st.set_page_config(
 )
 
 st.markdown("""
-    <style>
-    /* Target the selectbox container only */
-    div[data-baseweb="select"] > div {
-        background-color: #1e1e1e !important; /* Dark background */
-        color: white !important;              /* White text */
-    }
-    /* Ensure the dropdown items also have a dark background */
-    div[data-baseweb="select"] div[role="listbox"] {
-        background-color: #1e1e1e !important;
-        color: white !important;
-    }
-    </style>
+<style>
+/* Selectbox input (the closed field) */
+.stSelectbox [data-baseweb="select"] > div {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  border-color: #333 !important;
+}
+
+/* Placeholder / selected text */
+.stSelectbox [data-baseweb="select"] *[class*="placeholder"],
+.stSelectbox [data-baseweb="select"] *[class*="singleValue"] {
+  color: white !important;
+}
+
+/* ▼ The dropdown menu lives in a popover portal */
+div[data-baseweb="popover"] *[role="listbox"] {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+}
+div[data-baseweb="popover"] *[role="option"] {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+div[data-baseweb="popover"] *[role="option"]:hover,
+div[data-baseweb="popover"] *[role="option"][aria-selected="true"] {
+  background-color: #2a2a2a !important;
+  color: white !important;
+}
+</style>
 """, unsafe_allow_html=True)
 
 
