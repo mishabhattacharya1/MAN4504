@@ -22,6 +22,16 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+td {
+    border: 2px solid white !important;
+    padding: 10px !important;
+    border-radius: 6px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
 /* Selectbox input (the closed field) */
 .stSelectbox [data-baseweb="select"] > div {
   background-color: #1e1e1e !important;
