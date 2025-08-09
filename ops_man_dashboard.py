@@ -20,20 +20,23 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-styled = (
-    df.style
-      .set_table_styles([
-          {"selector": "th", "props": [("border", "1px solid white"),
-                                       ("background-color", "#1e1e1e"),
-                                       ("color", "white")]},
-          {"selector": "td", "props": [("border", "2px solid white"),
-                                       ("background-color", "#1e1e1e"),
-                                       ("color", "white")]}
-      ])
-      .set_properties(**{"border": "1px solid white"})
-)
+st.markdown("""
+<style>
+/* Headers + index in interactive dataframes */
+.stDataFrame th,
+.stDataFrame thead th,
+.stDataFrame tbody th {
+  border: 1px solid white !important;
+  color: white !important;
+  background-color: #1e1e1e !important;
+}
 
-st.table(styled)  
+/* Cells */
+.stDataFrame td {
+  border: 1px solid white !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <style>
