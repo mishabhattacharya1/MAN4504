@@ -20,10 +20,25 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+styled = (
+    df.style
+      .set_table_styles([
+          {"selector": "th", "props": [("border", "1px solid white"),
+                                       ("background-color", "#1e1e1e"),
+                                       ("color", "white")]},
+          {"selector": "td", "props": [("border", "2px solid white"),
+                                       ("background-color", "#1e1e1e"),
+                                       ("color", "white")]}
+      ])
+      .set_properties(**{"border": "1px solid white"})
+)
+
+st.table(styled)  
+
 st.markdown("""
 <style>
 td {
-    border: 2px solid white !important;
+    border: 1px solid white !important;
     padding: 10px !important;
     border-radius: 6px !important;
 }
