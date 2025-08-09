@@ -22,6 +22,22 @@ st.set_page_config(
 
 st.markdown("""
     <style>
+    /* Target the selectbox container only */
+    div[data-baseweb="select"] > div {
+        background-color: #1e1e1e !important; /* Dark background */
+        color: white !important;              /* White text */
+    }
+    /* Ensure the dropdown items also have a dark background */
+    div[data-baseweb="select"] div[role="listbox"] {
+        background-color: #1e1e1e !important;
+        color: white !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+    <style>
     /* Apply Times New Roman to everything */
     html, body, div, p, span, h1, h2, h3, h4, h5, h6, li, ul, ol, table, th, td, label, input, textarea {
         font-family: 'Times New Roman', Times, serif !important;
