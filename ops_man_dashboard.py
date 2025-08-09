@@ -47,6 +47,23 @@ st.markdown("""
 
 st.markdown("""
 <style>
+/* Top right navbar icons (GitHub, Share, etc.) */
+header [data-testid="stToolbar"] svg {
+    fill: white !important;
+    color: white !important;
+}
+
+/* Make sure the clickable areas don't change color on hover */
+header [data-testid="stToolbar"] a:hover svg {
+    fill: #cccccc !important; /* optional slight hover effect */
+    color: #cccccc !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<style>
 /* Horizontal rule (hr) styling */
 hr {
     border: none;
