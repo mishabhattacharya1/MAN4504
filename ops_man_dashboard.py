@@ -45,6 +45,28 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+/* Horizontal rule (hr) styling */
+hr {
+    border: none;
+    border-top: 1px solid white !important;
+    margin: 1rem 0; /* space above/below */
+}
+
+/* Streamlit buttons (normal + primary) */
+.stButton button {
+    border: 1px solid white !important;
+    color: white !important;
+    background-color: transparent !important; /* or keep original bg */
+}
+.stButton button:hover {
+    background-color: #2a2a2a !important;
+    border-color: white !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 st.markdown("""
 <style>
