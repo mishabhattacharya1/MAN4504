@@ -22,21 +22,29 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-/* Headers + index in interactive dataframes */
-.stDataFrame th,
-.stDataFrame thead th,
-.stDataFrame tbody th {
+/* Apply to both st.dataframe + st.table */
+[data-testid="stDataFrame"] th,
+[data-testid="stDataFrame"] td,
+[data-testid="stDataFrame"] [role="columnheader"],
+[data-testid="stDataFrame"] [role="rowheader"],
+[data-testid="stTable"] th,
+[data-testid="stTable"] td {
   border: 1px solid white !important;
-  color: white !important;
   background-color: #1e1e1e !important;
+  color: white !important;
 }
 
-/* Cells */
-.stDataFrame td {
+/* Optional: soften the grid a bit */
+[data-testid="stDataFrame"] .row_heading,
+[data-testid="stDataFrame"] .col_heading,
+[data-testid="stDataFrame"] .blank {
   border: 1px solid white !important;
+  background-color: #1e1e1e !important;
+  color: white !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 st.markdown("""
 <style>
